@@ -3,7 +3,7 @@ services:
   web:
     build: .
     ports:
-      - "10000"  
+      - "3002"  
     depends_on:
       mysql:
         condition: service_healthy
