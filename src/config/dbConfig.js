@@ -2,11 +2,11 @@ const mysql = require('mysql2');
 require('dotenv').config();
 
 const db = mysql.createConnection({
-  host: process.env.DB_HOST || 'localhost', // 'mysql' es el nombre del servicio en docker-compose
-  user: process.env.DB_USER || 'app_user',
-  password: process.env.DB_PASSWORD || 'password',
-  database: process.env.DB_NAME || 'nodeapi',
-  port: process.env.DB_PORT || 3306,
+  host: process.env.DB_HOST , // 'mysql' es el nombre del servicio en docker-compose
+  user: process.env.DB_USER ,
+  password: process.env.DB_PASSWORD ,
+  database: process.env.DB_NAME ,
+  port: process.env.DB_PORT,
   waitForConnections: true,
   connectTimeout: 10000, // 10 segundos de timeout
 });

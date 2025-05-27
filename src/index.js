@@ -4,7 +4,7 @@ const personajeRoutes = require('./routes/personajeRoutes');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.APP_PORT || 3002;
+const port = process.env.APP_PORT;
 
 app.use(bodyParser.json());
 
