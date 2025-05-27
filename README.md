@@ -3,7 +3,7 @@
 1. Copiar `.env.example` a `.env`
 2. Completar con tus credenciales locales
 3. `npm install`
-4. `node src/index.js`
+4. `node index.js`
 
 ## Variables de Entorno
 
