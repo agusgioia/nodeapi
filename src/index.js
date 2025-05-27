@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const personajeRoutes = require('./src/routes/personajeRoutes');
+const personajeRoutes = require('./routes/personajeRoutes');
 require('dotenv').config();
 
 const app = express();
