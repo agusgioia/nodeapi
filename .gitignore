@@ -1,0 +1,48 @@
+# Entornos y variables
+.env                
+.env.*              
+config/config.json  
+
+# Dependencias
+/node_modules
+/.pnp
+.pnp.js
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+logs/
+
+# Entornos de desarrollo
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Testing
+/coverage
+.nyc_output
+
+# Producción
+/build
+/dist
+/serverless/
+
+# Misceláneo
+.DS_Store
+*.seed
+*.pid
+*.pid.lock
+*.dump
+*.zip
+*.tar.gz
+*.tgz
+
+# Archivos de sistema
+Thumbs.db
+ehthumbs.db
