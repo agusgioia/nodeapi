@@ -1,21 +1,33 @@
 version: '3.8'
 services:
+  web:
+    build: .
+    ports:
+      - "10000"  
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_HOST: localhost
+      DB_PORT: 3306
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}  # Contraseña root (segura)
-      MYSQL_DATABASE: ${DB_NAME}                # Nombre de tu BD (nodeapi)
-      MYSQL_USER: ${DB_USER}                    # Usuario para tu app
-      MYSQL_PASSWORD: ${DB_PASSWORD}            # Contraseña del usuario
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql              # Persistencia de datos
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s
       timeout: 10s
-      retries: 5
+      retries: 10
+    volumes:
+      - mysql_data:/var/lib/mysql
 
 volumes:
   mysql_data:
