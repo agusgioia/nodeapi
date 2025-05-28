@@ -25,7 +25,7 @@ class personajeModel {
 
     putPersonaje(id, nombreCompleto, edad, altura, peso, callback){
         const sql = 'update personajes set nombreCompleto=?, edad=?, altura=?, peso=?';
-        db.query(sql,[nombreCompleto, edad, altura, peso,id],callback);
+        db.query(sql,[nombreCompleto, edad, altura, peso, id],callback);
     }
 
     deletePersonaje(id,callback){
