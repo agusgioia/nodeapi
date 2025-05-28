@@ -27,6 +27,7 @@ function getUserById(req, res) {
 
 function postUser(req,res){
     const {nombreCompleto, edad, genero, dni} = req.body;
+    console.log("Datos recibidos en el backend:", req.body);
     personajeModel.postUser(nombreCompleto, edad, genero, dni, (err,result)=>{
         if (err){
             console.error("Error al insertar en la BDD:", err);
