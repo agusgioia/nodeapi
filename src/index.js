@@ -9,7 +9,7 @@ const port = process.env.APP_PORT;
 
 app.use(bodyParser.json());
 app.use(cors({
-    origin:'htpp://localhost:5173',
+    origin:'htpp://localhost:5173/',
     methods:['GET','POST','PUT','PATCH','DELETE'],
     credentials:true
 }));
