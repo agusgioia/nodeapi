@@ -12,7 +12,7 @@ function getUsers(req, res) {
 
 function getUserById(req, res) {
     const { id } = req.params;
-    personajeModel.getPersonajeById(id, (err, results) => {
+    personajeModel.getUserById(id, (err, results) => {
         if (err) {
             res.status(500).json({ error: err.message });
             return;
@@ -27,7 +27,7 @@ function getUserById(req, res) {
 
 function postUser(req,res){
     const {nombreCompleto, edad, genero, dni} = req.body;
-    personajeModel.postPersonaje(nombreCompleto, edad, genero, dni, (err,result)=>{
+    personajeModel.postUser(nombreCompleto, edad, genero, dni, (err,result)=>{
         if (err){
             res.status(500).json({err:err.message});
             return;
