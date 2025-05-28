@@ -29,6 +29,7 @@ function postUser(req,res){
     const {nombreCompleto, edad, genero, dni} = req.body;
     personajeModel.postUser(nombreCompleto, edad, genero, dni, (err,result)=>{
         if (err){
+            console.error("Error al insertar en la BDD:", err);
             res.status(500).json({err:err.message});
             return;
         }
